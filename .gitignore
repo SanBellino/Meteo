@@ -1,10 +1,7 @@
-# Non caricare la chiave API
 .env
 
-# Cache di Python
 __pycache__/
 *.pyc
 
-# File temporanei di editor (tipo VSCode o PyCharm)
 *.vscode/
 *.idea/
