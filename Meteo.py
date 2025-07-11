@@ -11,8 +11,8 @@ print(API_KEY)
 
 city_name= input("Scrivi la città di cui ottenere il meteo: ")
 limit= 2
-trova_citta = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name}&limit={limit}&appid={API_KEY}"
-response_city = requests.get(trova_citta).json()
+find_city = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name}&limit={limit}&appid={API_KEY}"
+response_city = requests.get(find_city).json()
 print(response_city)
 lat = response_city[0]["lat"]
 lon = response_city[0]["lon"]
@@ -29,4 +29,4 @@ temp_K = meteo["main"]["temp"]
 temp_C = temp_K - 273.15
 humidity = meteo["main"]["humidity"]
 wind_speed = meteo["wind"]["speed"]
-print(f"📍 Meteo attuale per {name}\n Tempo: {weather} \n 🌡️  Temperature in Celsius: {round(temp_C, 2)} \n 💧  Umidità: {humidity}% \n 🌬️  Vento: {wind_speed} km/s")
+print(f"📍 Current weather for {name}\n Weather: {weather}\n 🌡️ Temperature in Celsius: {round(temp_C, 2)}\n 💧 Humidity: {humidity}%\n 🌬️ Wind: {wind_speed} km/s")
