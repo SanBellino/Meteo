@@ -16,7 +16,6 @@ city_name= input("Type the city you want to know the weather of: ")
 limit= 2
 find_city = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name.lower()}&limit={limit}&appid={API_KEY}"
 response_city = requests.get(find_city).json()
-print(response_city)
 lat = response_city[0]["lat"]
 lon = response_city[0]["lon"]
 
@@ -25,7 +24,6 @@ lon = response_city[0]["lon"]
 part = 1
 url= f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API_KEY}"
 meteo = requests.get(url).json()
-print(meteo)
 
 #Qui prendiamo solo le informazioni che vogliamo e le salviamo in delle variabili e poi stampiamo
 #We takes only the informations we wants and we save them into variables, then we print
