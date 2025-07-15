@@ -23,10 +23,6 @@ def find_city(API_KEY):
      lon = response_city[0]["lon"]
      return  city_name, lat, lon
 
-#Essenziale per mandare il risultato di lat e lon in due variabili che verranno trasferite alla funzione give_meteo
-#Essential to send the values of lat and lon into two variables that will be given to the give_meteo function
-city_name, lat, lon = find_city(API_KEY)
-
 #Questa funzione trova grazie alla latitudine e la longitudine la città che abbiamo cercato in precedenza e ci restituisce varie informazioni tramite json
 #This function finds the city thanks to the lat and lon we got before and returns various information through json
 def give_meteo(city_name, lat, lon, API_KEY):
@@ -43,11 +39,6 @@ def give_meteo(city_name, lat, lon, API_KEY):
     print("-" * 40)
 
 
-
-#Ciclo per permettere di cercare più città senza dover riavviare il programma
-#Cycle that allows to search more city without restarting the program
-give_meteo(city_name, lat, lon, API_KEY)
 while True: 
      city_name, lat, lon = find_city(API_KEY)
      give_meteo(city_name, lat, lon, API_KEY)
-
